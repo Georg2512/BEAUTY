@@ -38,13 +38,14 @@
                     <div class="card-footer">
                         ${product.city}
                     </div>
-                    <div class="product-link"><#if user.active>
-                            <input type="date" name="_csrf" />
-                            <input type="time" name="_csrf"/>
-                            <a href="/sendMail" class="btn btn-primary" >Записаться</a>
-                        <#else>Зарегистрируйтесь чтобы записаться!
-                        </#if></div>
+
                 </div>
+                <div class="product-link"><#if user.active>
+                        <input type="date" name="_csrf" />
+                        <input type="time" name="_csrf"/>
+                        <a href="/sendMail" class="btn btn-primary" >Записаться</a>
+                    <#else>Зарегистрируйтесь чтобы записаться!
+                    </#if></div>
 
             </a>
 
