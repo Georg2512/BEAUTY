@@ -38,7 +38,7 @@
                     <div class="card-footer">
                         ${product.city}
 
-                    <button>fdsf</button>
+                    <button>fdfdsgdsfgdff</button>
 
                     </div>
 
