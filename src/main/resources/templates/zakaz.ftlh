@@ -1,4 +1,4 @@
-<#import "blocks/template.ftlh" as t>
+<#import "blocks/template_admin.ftlh" as t>
 <@t.template user>
 <div class="card-columns">
     <#list zakaz as zakaz>

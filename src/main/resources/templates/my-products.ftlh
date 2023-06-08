@@ -1,4 +1,4 @@
-<#import "blocks/template.ftlh" as t>
+<#import "blocks/template_admin.ftlh" as t>
 <@t.template user>
     <h1 style="text-align: center">Мои услуги</h1>
     <hr>

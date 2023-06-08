@@ -17,29 +17,8 @@
     <body class="d-flex flex-column h-100">
     <header id="header" class="fixed-top">
         <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
+            <div class="container collapse navbar-collapse">
                 <a href="/products" class="navbar-brand waves-effect">BEAUTY</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navContent"
-                        aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navContent">
-                    <div class="mx-auto">
-                    <ul class="navbar-nav mr-auto mb-3 mb-lg-0">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Услуги</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">О нас</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Прайс</a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">Контакты</a>
-                        </li>
-                    </ul>
-                    </div>
                     <#if user.email??>
                         <div class="dropdown mr-2">
                             <a href="/profile">
@@ -53,12 +32,13 @@
                             Войти
                         </button>
                     </#if>
-                </div>
             </div>
         </nav>
     </header>
     <main class="mt-4 pt-4">
+        <div class="container mt-4">
             <#nested/>
+        </div>
     </main>
 
     <footer class="text-center text-lg-start bg-light text-muted mt-auto py-3">

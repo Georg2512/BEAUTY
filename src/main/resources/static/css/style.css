@@ -1,9 +1,74 @@
+body{
+    color: #494747;
+}
 .product:hover {
     transition: 0.5s;
     transform: scale(1.02);
+    color: #6e6b6b;
 }
 
 .product-link {
-    color: #000 !important;
-    text-decoration: none
+    color: #494747;
+    text-decoration: none;
+}
+.product-link:hover {
+    color: #000000;
+    text-decoration: none;
+}
+header{
+    opacity: 0.7;
+    background-color: black;
+
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255);
+}
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: rgba(255,255,255,.5);
+}
+.nav-item{
+    padding: 0 15px 0 15px ;
+}
+.p-3 {
+    padding: 0rem!important;
+}
+.bcg{
+    background-color: #fdf7ffee;
+}
+.bcg2{
+    background-color: #f8f7ffee;
+}
+.padd{
+    padding:50px 0 100px 0;
+}
+.container2{
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1300px;
+}
+.container3{
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1200px;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #181818;
+    border-color: #4f4f4f;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #968b71;
+    border-color: #333333;
+    border-radius: 0.5rem;
+}
+.card{
+    border: 0;
+}
+img:hover{
+    transition: 0.5s;
+    transform: scale(1.02);
+}
+.container4{
+    width: 45%;
 }

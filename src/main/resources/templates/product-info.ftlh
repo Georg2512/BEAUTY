@@ -1,4 +1,4 @@
-<#import "blocks/template.ftlh" as t>
+<#import "blocks/template_admin.ftlh" as t>
 <@t.template user>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
