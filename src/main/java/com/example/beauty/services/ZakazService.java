@@ -28,8 +28,7 @@ public class ZakazService {
         return zakazRepository.findAll();
     }
 
-    public void saveZakaz(Zakaz zakaz,Principal principal) throws IOException {
-        zakaz.setUser(getUserByPrincipal(principal));
+    public void saveZakaz(Zakaz zakaz) throws IOException {
         zakazRepository.save(zakaz);
     }
 
@@ -46,4 +45,5 @@ public class ZakazService {
     public Zakaz getZakazById(Long id) {
         return zakazRepository.findById(id).orElse(null);
     }
+
 }

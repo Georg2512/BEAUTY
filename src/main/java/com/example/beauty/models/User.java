@@ -36,9 +36,6 @@ public class User implements UserDetails {
             mappedBy = "user")
     private List<Product> products = new ArrayList<>();
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Zakaz zakaz = new Zakaz();
-
     public void addProductToUser(Product product) {
         product.setUser(this);
         products.add(product);

@@ -39,9 +39,8 @@ public class SimpleMailController {
             helper.setSubject("Клиент с почтой " + email + " записался на ");
             zakaz.setValue(email);
             zakaz.setDate("TEst");
-            zakaz.getDateOfCreated();
             zakaz.setStatus("Создан");
-            zakazService.saveZakaz(zakaz,principal);
+            zakazService.saveZakaz(zakaz);
         } catch (MessagingException | IOException e) {
             e.printStackTrace();
             return "Error while sending mail ..";

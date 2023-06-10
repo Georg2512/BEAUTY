@@ -21,13 +21,15 @@ public class Zakaz {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
+        private String nameClient;
+        private String mailClient;
+        private String phoneClient;
         private String value;
         private String status;
-        @ManyToOne
-        @JoinColumn(name = "user_id")
-        private User user;
+
         private LocalDateTime dateOfCreated;
         private String date;
+        private String time;
 
         @PrePersist
         private void onCreate() { dateOfCreated = LocalDateTime.now(); }
