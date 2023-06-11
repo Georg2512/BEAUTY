@@ -5,10 +5,18 @@ import javax.mail.internet.MimeMessage;
 
 import com.example.beauty.models.Zakaz;
 import com.example.beauty.services.ZakazService;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.apache.commons.mail.DefaultAuthenticator;
+import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.SimpleEmail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
@@ -16,36 +24,31 @@ import java.security.Principal;
 import java.util.Date;
 
 @RestController
-
+@AllArgsConstructor
+@Data
+@NoArgsConstructor
 public class SimpleMailController {
-    private final ZakazService zakazService;
     @Autowired
     private JavaMailSender sender;
 
     Date date = new Date();
 
-    public SimpleMailController(ZakazService zakazService) {
-        this.zakazService = zakazService;
-    }
-
     @RequestMapping("/sendMail")
-    public String sendMail(Principal principal, Zakaz zakaz) {
-        MimeMessage message = sender.createMimeMessage();
-        MimeMessageHelper helper = new MimeMessageHelper(message);
+    public String sendMail() {
         try {
-            String email = principal.getName();
-            helper.setTo("gg@s24volga.ru");
-            helper.setText("Запись от " + date);
-            helper.setSubject("Клиент с почтой " + email + " записался на ");
-            zakaz.setValue(email);
-            zakaz.setDate("TEst");
-            zakaz.setStatus("Создан");
-            zakazService.saveZakaz(zakaz);
-        } catch (MessagingException | IOException e) {
-            e.printStackTrace();
-            return "Error while sending mail ..";
+            SimpleEmail email = new SimpleEmail();
+            email.setHostName("smtp.mail.ru");
+            email.setSmtpPort(465);
+            email.setAuthenticator(new DefaultAuthenticator("sektor162s@mail.ru", "PnXR5zzvvpqvibBU7Gkk"));
+            email.setSSLOnConnect(true);
+            email.setFrom("sektor162s@mail.ru");
+            email.setSubject("TestMail");
+            email.setMsg("This is a test mail ... :-)");
+            email.addTo("sektor162s@mail.ru");
+            email.send();
+        } catch (EmailException e) {
+            throw new RuntimeException(e);
         }
-        sender.send(message);
         return "Администратор будет уведомлен о вашей записи!";
     }
 }

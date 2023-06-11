@@ -32,17 +32,20 @@
                     <img src="/images/${product.previewImageId}"
                          class="card-img-top">
                     <div class="card-body">
-                        <h5 class="card-title">${product.title}</h5>
-                        <p class="card-text">${product.price} ₽</p>
+                        <h5 class="card-title"> <font color = "white">${product.title}</font></h5>
+                        <p class="card-text"> <font color = "white">${product.price} ₽</font> </p>
                     </div>
                     <div class="card-footer">
-                        ${product.city}
+                        <font color = "white">${product.city}</font>
+                        <br>
+                        <br>
+                        <#if user.active>
+                            <a href="/my/zakaz/create" class="btn btn-primary" >Записаться</a>
+                        <#else><font color="white">Зарегистрируйтесь чтобы записаться!</font>
+                        </#if>
                     </div>
                 </div>
-                <div class="product-link"><#if user.active>
-                        <a href="/my/zakaz/create" class="btn btn-primary" >Записаться</a>
-                    <#else>Зарегистрируйтесь чтобы записаться!
-                    </#if></div>
+
             </a>
 
         <#else>

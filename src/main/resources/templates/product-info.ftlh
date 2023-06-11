@@ -39,7 +39,11 @@
     <hr>
     <p><h1 style="text-align: center">${product.title} | ${product.price} ₽</h1></p>
     <p style="text-align: center">${product.description}</p>
-    <#if user.active><p style="text-align: center">Номер телефона мастера: <b>${authorProduct.phoneNumber}</b></p><#else><p style="text-align: center"><b>Зарегистрируйтесь чтобы увидеть контакты!</b></p>
+    <#if user.active>
+        <p style="text-align: center">Номер телефона мастера: <b>${authorProduct.phoneNumber}</b></p>
+        <p style="text-align: center">Почта мастера: <b>${authorProduct.email}</b></p>
+    <#else><p style="text-align: center"><b>Зарегистрируйтесь чтобы увидеть контакты!</b></p>
+
     </#if>
     <hr>
     <p style="text-align: center">

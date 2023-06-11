@@ -16,6 +16,8 @@ import java.security.Principal;
 public class UserController {
     private final UserService userService;
 
+    SimpleMailController simpleMailController;
+
     @GetMapping("/login")
     public String login(Principal principal, Model model) {
         model.addAttribute("user", userService.getUserByPrincipal(principal));
