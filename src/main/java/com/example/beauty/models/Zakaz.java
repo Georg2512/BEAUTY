@@ -25,6 +25,7 @@ public class Zakaz {
         private String mailClient;
         private String phoneClient;
         private String value;
+        private String executor;
         private String status;
 
         private LocalDateTime dateOfCreated;

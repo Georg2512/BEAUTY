@@ -54,6 +54,15 @@ public class ZakazController {
         zakazService.saveZakaz(zakaz);
         return "redirect:/my/zakaz";
     }
+
+    @PostMapping("/zakaz/exec/{id}/exec/{exec}")
+    public String execZakaz(@PathVariable Long id,@PathVariable String exec) throws IOException {
+        Zakaz zakaz = zakazService.getZakazById(id);
+        zakaz.setExecutor(exec);
+        zakazService.saveZakaz(zakaz);
+        return "redirect:/my/zakaz";
+    }
+
     @PostMapping("/zakaz/reupdate/{id}")
     public String reupdateZakaz(@PathVariable Long id) throws IOException {
         Zakaz zakaz = zakazService.getZakazById(id);

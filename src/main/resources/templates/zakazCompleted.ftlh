@@ -10,6 +10,7 @@
             <h5 class="card-title">Дата создания заказа  ${zakaz.dateOfCreated}</h5>
             <h5 class="card-title">Дата на которую оформлен заказ: ${zakaz.date}</h5>
             <h5 class="card-title">Описание заказа: ${zakaz.value}</h5>
+            <h5 class="card-title">Исполнитель: ${zakaz.executor}</h5>
             <h5 class="card-title">Статус: ${zakaz.status}</h5>
             <form action="/zakaz/delete/${zakaz.id}" method="post">
                 <input type="hidden" name="_csrf" value="${_csrf.token}"/>
