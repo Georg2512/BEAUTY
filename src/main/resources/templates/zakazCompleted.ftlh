@@ -2,7 +2,7 @@
 <@t.template user>
     <div class="card-columns">
     <#list zakaz as zakaz>
-    <#if zakaz.status == "Завершен">
+    <#if zakaz.mailClient == user.email && zakaz.status == "Завершен"  || user.isAdmin() >>
     <div class="card text-white bg-dark my-3 zakaz">
         <div class="card-body">
             <h5 class="card-title">Заказ от пользователя  ${zakaz.nameClient}</h5>
