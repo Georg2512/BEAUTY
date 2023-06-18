@@ -28,6 +28,9 @@
             <input type="time" class="form-control" id="date" required name="date">
         </div>
         <div class="form-group">
+            <input type="hidden" class="form-control" id="executor" required name="executor" value="Не назначен">
+        </div>
+        <div class="form-group">
             <input type="hidden" class="form-control" id="status" required name="status" value="Создан">
         </div>
         <input type="hidden" name="_csrf" value="${_csrf.token}">
