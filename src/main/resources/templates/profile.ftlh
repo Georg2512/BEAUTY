@@ -25,10 +25,18 @@
            href="/my/products">
             Добавить услуги
         </a>
+        <#if user.isAdmin()>
         <a class="btn btn-dark mb-3" style="text-align: center; width: 100%"
                href="/my/zakaz">
-                Мои заказы
+                Все заказы
         </a>
+        </#if>
+        <#if !user.isAdmin()>
+        <a class="btn btn-dark mb-3" style="text-align: center; width: 100%"
+           href="/my/zakaz">
+            Мои заказы
+        </a>
+        </#if>
             <a class="btn btn-dark mb-3" style="text-align: center; width: 100%"
                href="/my/zakaz/completed">
                 Завершенные заказы
