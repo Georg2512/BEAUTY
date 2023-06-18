@@ -2,7 +2,7 @@
 <@t.template user>
 <div class="card-columns">
     <#list zakaz as zakaz>
-    <#if zakaz.status == "Создан" || zakaz.status == "Возобновлен" >
+    <#if zakaz.mailClient == user.email && zakaz.status == "Создан" || zakaz.mailClient == user.email && zakaz.status == "Возобновлен" || user.isAdmin() >
     <div class="card text-white bg-dark my-3 zakaz">
         <div class="card-body">
             <h5 class="card-title">Заказ от пользователя  ${zakaz.nameClient}</h5>
@@ -27,8 +27,8 @@
         </div>
     </div>
     <div class="product-link">
-    </#if>
-    <#else>
+        </#if>
+        <#else>
         <h1 style="text-align: center">Не найдено</h1>
     </#list>
 

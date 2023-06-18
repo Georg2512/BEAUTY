@@ -21,18 +21,14 @@
                 Панель администратора
             </a><br>
         </#if>
-        <#if user.isAdmin()>
         <a class="btn btn-dark mb-3" style="text-align: center; width: 100%"
            href="/my/products">
             Добавить услуги
         </a>
-        </#if>
-        <#if user.isAdmin()>
-            <a class="btn btn-dark mb-3" style="text-align: center; width: 100%"
+        <a class="btn btn-dark mb-3" style="text-align: center; width: 100%"
                href="/my/zakaz">
                 Мои заказы
-            </a>
-        </#if>
+        </a>
         <#if user.isAdmin()>
             <a class="btn btn-dark mb-3" style="text-align: center; width: 100%"
                href="/my/zakaz/completed">

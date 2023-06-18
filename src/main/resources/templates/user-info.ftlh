@@ -35,4 +35,10 @@
             <h1 style="text-align: center">Не найдено</h1>
         </#list>
     </div>
+    <#if user.isAdmin()>
+        <a class="btn btn-dark mb-3" style="text-align: center; width: 100%"
+           href="/my/zakaz">
+            Заказы пользователя
+        </a>
+    </#if>
 </@t.template>
