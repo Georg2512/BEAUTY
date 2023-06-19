@@ -12,18 +12,22 @@
             <h5 class="card-title">Описание заказа: ${zakaz.value}</h5>
             <h5 class="card-title">Исполнитель: ${zakaz.executor}</h5>
             <h5 class="card-title">Статус: ${zakaz.status}</h5>
+            <#if user.isAdmin() >
             <form action="/zakaz/update/${zakaz.id}" method="post">
                 <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                 <button type="submit" class="btn btn-danger m-3">
                     Завершить
                 </button>
             </form>
+
             <form action="/zakaz/exec/${zakaz.id}/exec/${user.name}" method="post">
                 <input type="hidden" name="_csrf" value="${_csrf.token}"/>
                 <button type="submit" class="btn btn-danger m-3">
                     Взять в работу
                 </button>
             </form>
+            </#if>
+            <#else>
         </div>
     </div>
     <div class="product-link">
