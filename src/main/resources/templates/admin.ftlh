@@ -1,3 +1,5 @@
+<#import "blocks/template.ftlh" as t>
+<@t.template user>
 <h1 style="text-align: center">Панель администратора</h1><hr>
     <table class="table table-hover table-dark">
         <tr>
@@ -28,3 +30,4 @@
             <h3>Пользователей нет</h3>
         </#list>
     </table>
+</@t.template>

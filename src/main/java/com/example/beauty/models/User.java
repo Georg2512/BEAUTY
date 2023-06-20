@@ -14,9 +14,9 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(unique = true, updatable = false)
+    private String name;
     private String email;
     private String phoneNumber;
-    private String name;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn
